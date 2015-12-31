@@ -29,13 +29,13 @@ public class DetailsActivityFragment extends Fragment {
         if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
             MovieDetails = intent.getExtras().getParcelable(Intent.EXTRA_TEXT);
             if (MovieDetails != null) {
-                String releaseDate = MovieDetails.ReleaseDate + " / 10";
+                String Ratings = MovieDetails.Ratings + " / 10";
                 ImageView PosterView = (ImageView) rootView.findViewById(R.id.detail_poster);
                 Picasso.with(getActivity()).load(MovieDetails.PosterPath).into(PosterView);
                 ((TextView) rootView.findViewById(R.id.detail_title)).setText(MovieDetails.OriginalTitle);
                 ((TextView) rootView.findViewById(R.id.detail_release_date)).setText(MovieDetails.ReleaseDate);
                 ((TextView) rootView.findViewById(R.id.detail_overview)).setText(MovieDetails.Overview);
-                ((TextView) rootView.findViewById(R.id.detail_votings)).setText(releaseDate);
+                ((TextView) rootView.findViewById(R.id.detail_votings)).setText(Ratings);
             }
         }
         return rootView;
